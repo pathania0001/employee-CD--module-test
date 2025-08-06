@@ -4,10 +4,11 @@ const inputs = document.querySelectorAll("input");
 const result = document.getElementById("result");
 const message = document.getElementById("msg");
 let employees = [];
-const removeEmp = (idx)=>{
-    employees = employees.filter((_,index) => index !== idx)
+const removeEmp = (id)=>{
+    employees = employees.filter((emp) => emp.id !== id)
     buildList();
 }
+let uniqueId = 0;
 const buildList = ()=>{
     result.innerHTML="";
     if(employees.length>0){
@@ -42,10 +43,14 @@ else{
 inputs.forEach((input)=>{
     input.onchange = ()=>{
       const value = input.value
-      const updatedVal  = value.trim().split(" ").map((val)=>{
-        return value ? val[0].toUpperCase() + val.slice(1) : ""
+      const updatedVal  = [];
+      value.trim().split(" ").map((val)=>{
+        if(val){
+            const upd = val && val[0].toUpperCase() + val.slice(1);
+            updatedVal.push(upd);
+        }
       }).join(" ")
-      input.value = updatedVal;
+      input.value = updatedVal.join(" ");
 }})
 
 form.onsubmit = (e)=>{
@@ -54,7 +59,7 @@ form.onsubmit = (e)=>{
     inputs.forEach((input)=>{
          value[input.name] = input.value
     })
-
+    value.id = ++uniqueId;
     if(!value.name || !value.age || !value.profession || isNaN(value.age) || value.age <= 0){
         message.innerHTML = "Error : Please Make sure All the fields are filled before adding in an employee !"
         message.className = "error";
