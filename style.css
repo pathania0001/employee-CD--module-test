@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-size: 18px;
+}
+body {
+    background-color: black;
+    padding: 3.625rem;
+    font-family: 'Inter', sans-serif;
+}
+.inputs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.625rem; 
+    margin-bottom: 3.625rem;
+}
+ form label{
+    display: block;
+    width: 100%;
+    flex: 1;
+    color: #ffffff;
+}
+ form input{
+    display:block;
+    padding: 1rem 1.25rem;
+    color: #ffffff;
+    border: 1px solid;
+    background-color: transparent;
+    border-radius: 5px;
+    width:100%;
+}
+form button{
+    padding: 0.75rem 2.625rem;
+    font-size: 24px;
+    border: 0px;
+    border-radius: 5px;
+    
+}
+label{
+    color: #ffffff;
+}
+label span{
+    display: block;
+    padding-bottom:1rem;
+}
+.success {
+    color: #27ae60; 
+}
+
+.error {
+    color: #e74c3c; 
+}
+#msg{
+    margin-top: 1.5rem;
+}
+.lists{
+    color: #ffffff;
+}
+.lists h1{
+    margin: 2rem 0;
+}
+#result{
+    opacity: 0.5; 
+}
+.emp{
+    display: flex;
+    justify-content: start;
+    gap:3rem;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+.empList{
+    display: flex;
+    width: max-content;
+    padding: 0.5rem 0.75rem;
+    gap:2rem;
+    border: 1px solid;
+    background-color: transparent;
+     border-radius:5px;
+}
+.delete{
+    padding: 8px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    border: 0px;
+    cursor: pointer;
+}
