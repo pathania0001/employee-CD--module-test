@@ -60,8 +60,13 @@ form.onsubmit = (e)=>{
          value[input.name] = input.value
     })
     value.id = ++uniqueId;
-    if(!value.name || !value.age || !value.profession || isNaN(value.age) || value.age <= 0){
+    if(!value.name || !value.age || !value.profession || isNaN(value.age)){
         message.innerHTML = "Error : Please Make sure All the fields are filled before adding in an employee !"
+        message.className = "error";
+        return;
+    }
+    if(value.age < 18){
+        message.innerHTML = "Error : Entered age should be greater then 18"
         message.className = "error";
         return;
     }
