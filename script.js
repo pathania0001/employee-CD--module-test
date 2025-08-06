@@ -66,7 +66,7 @@ form.onsubmit = (e)=>{
         return;
     }
     if(value.age < 18){
-        message.innerHTML = "Error : Entered age should be greater then 18"
+        message.innerHTML = "Error : Entered age should not be less the 18"
         message.className = "error";
         return;
     }
