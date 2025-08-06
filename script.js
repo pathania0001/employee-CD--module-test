@@ -26,7 +26,7 @@ const buildList = ()=>{
         deletebtn = document.createElement("button");
         deletebtn.classList.add("delete")
         deletebtn.innerHTML = "Delete User";
-        deletebtn.onclick = ()=>{removeEmp(index);}
+        deletebtn.onclick = ()=>{removeEmp(employee.id);}
         emp.appendChild(empList);
         emp.appendChild(deletebtn);
         result.appendChild(emp)
